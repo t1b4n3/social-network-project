@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #3b82f6; /* Tailwind blue-500 */
+    --background-color: #f3f4f6; /* Tailwind gray-100 */
+    --card-color: #ffffff;
+    --text-color: #1f2937; /* Tailwind gray-800 */
+    --error-color: #ef4444; /* Tailwind red-500 */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Styles applied to both the register and login form wrappers */
+.register-form-wrapper, .login-form-wrapper {
+    background-color: var(--card-color);
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    max-width: 420px;
+    width: 100%;
+    color: var(--text-color);
+    /* Transition set for transform and box-shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Added a subtle lift effect when the user hovers over the form card (applied to both) */
+.register-form-wrapper:hover, .login-form-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -3px rgba(0, 0, 0, 0.1), 0 6px 10px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading styles (applied to both) */
+.register-form-wrapper h2, .login-form-wrapper h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Styling for the form's structure and elements */
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+}
+
+form input[type='text'],
+form input[type='email'],
+form input[type='password'] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Light primary shadow */
+}
+
+/* Hide the <br> tags used for spacing, rely on block elements */
+form br {
+    display: none;
+}
+
+/* Custom spacing between form field groups */
+form label:not(:first-of-type) {
+    margin-top: 1.25rem;
+}
+
+/* Submit Button Styling */
+form input[type='submit'] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+}
+
+form input[type='submit']:hover {
+    background-color: #2563eb; /* Darker primary color (blue-600) */
+    transform: translateY(-1px);
+}
+form input[type='submit']:active {
+    transform: translateY(0);
+}
+
+/* Error Message Styling */
+#password_not_match {
+    color: var(--error-color);
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    min-height: 1.25rem; /* Reserve space for the error message */
+}
+
+/* Separator and Link Styling */
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    margin: 1.5rem 0;
+}
+
+/* Link styles (applied to both) */
+.register-form-wrapper a, .login-form-wrapper a {
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.register-form-wrapper a:hover, .login-form-wrapper a:hover {
+    color: #2563eb; /* Darker primary color */
+    text-decoration: underline;
+}
